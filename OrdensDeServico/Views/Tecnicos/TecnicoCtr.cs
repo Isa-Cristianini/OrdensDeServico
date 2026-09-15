@@ -23,14 +23,14 @@ namespace OrdensDeServico.Views.Tecnicos
             lblEspecialidade.Text = tecnico.Especialidade;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             FrmEditar frm = new FrmEditar(presenter, tecnico);
             frm.ShowDialog();
             frmListar.CarregarTecnicos();
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show($"Deseja excluir o técnico {tecnico.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

@@ -30,8 +30,8 @@
         {
             lblNome = new Label();
             lblEspecialidade = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // lblNome
@@ -40,7 +40,6 @@
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(238, 23);
             lblNome.TabIndex = 0;
-            lblNome.Click += label1_Click;
             // 
             // lblEspecialidade
             // 
@@ -49,34 +48,37 @@
             lblEspecialidade.Size = new Size(238, 23);
             lblEspecialidade.TabIndex = 1;
             // 
-            // button1
+            // btnEditar
             // 
-            button1.Location = new Point(26, 113);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
+            btnEditar.Location = new Point(27, 101);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 2;
+            btnEditar.Text = "&Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click_1;
             // 
-            // button2
+            // btnExcluir
             // 
-            button2.Location = new Point(151, 113);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Remover";
-            button2.UseVisualStyleBackColor = true;
+            btnExcluir.Location = new Point(147, 101);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(80, 23);
+            btnExcluir.TabIndex = 3;
+            btnExcluir.Text = "&Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click_1;
             // 
             // TecnicoCtr
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            BackColor = SystemColors.ControlLight;
+            Controls.Add(btnExcluir);
+            Controls.Add(btnEditar);
             Controls.Add(lblEspecialidade);
             Controls.Add(lblNome);
             Name = "TecnicoCtr";
-            Size = new Size(250, 158);
+            Size = new Size(250, 144);
             ResumeLayout(false);
         }
 
@@ -84,7 +86,7 @@
 
         private Label lblNome;
         private Label lblEspecialidade;
-        private Button button1;
-        private Button button2;
+        private Button btnEditar;
+        private Button btnExcluir;
     }
 }

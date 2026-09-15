@@ -59,7 +59,6 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(306, 23);
             txtNome.TabIndex = 2;
-            txtNome.TextChanged += textBox1_TextChanged;
             // 
             // txtEspecialidade
             // 
@@ -76,6 +75,7 @@
             btnSalvar.TabIndex = 4;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // FrmCadastrar
             // 
@@ -87,8 +87,10 @@
             Controls.Add(txtNome);
             Controls.Add(label1);
             Controls.Add(lblNome);
+            MaximizeBox = false;
             Name = "FrmCadastrar";
-            Text = "FrmCadastrar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastrar Técnico";
             ResumeLayout(false);
             PerformLayout();
         }

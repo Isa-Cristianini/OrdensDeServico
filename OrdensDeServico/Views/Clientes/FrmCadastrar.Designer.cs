@@ -81,7 +81,7 @@ namespace OrdensDeServico.Views.Clientes
             Name = "FrmCadastrar";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar Cliente";
-            Load += FrmCadastrar_Load;
+            //Load += FrmCadastrar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

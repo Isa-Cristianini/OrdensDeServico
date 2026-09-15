@@ -60,9 +60,11 @@
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += BtnBuscar_Click;
             // 
             // flpTecnicos
             // 
+            flpTecnicos.AutoScroll = true;
             flpTecnicos.Location = new Point(0, 45);
             flpTecnicos.Name = "flpTecnicos";
             flpTecnicos.Size = new Size(534, 336);
@@ -72,13 +74,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(514, 441);
             Controls.Add(flpTecnicos);
             Controls.Add(btnBuscar);
             Controls.Add(btnNovo);
             Controls.Add(txtBusca);
+            MaximizeBox = false;
             Name = "FrmListar";
-            Text = "FrmListar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Lista de Técnicos";
             ResumeLayout(false);
             PerformLayout();
         }

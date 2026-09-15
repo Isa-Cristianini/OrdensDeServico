@@ -23,17 +23,15 @@ namespace OrdensDeServico.Views.Tecnicos
 
         private void CarregarDados()
         {
-            // Exibe a descrição da ordem (ou detalhe da OS)
-            lblDescricao.Text = ordemServico.Descricao; // Ajuste conforme a propriedade do seu Model
+           
+            lblDescricao.Text = ordemServico.DescricaoProblema;
 
-            // Configurar itens do ComboBox conforme especificação da imagem
             cmbStatus.Items.Clear();
             cmbStatus.Items.Add("Em andamento");
             cmbStatus.Items.Add("Pendente");
             cmbStatus.Items.Add("Concluído");
             cmbStatus.Items.Add("Cancelado");
 
-            // Define o item selecionado atual
             if (cmbStatus.Items.Contains(ordemServico.Status))
             {
                 cmbStatus.SelectedItem = ordemServico.Status;
@@ -42,30 +40,33 @@ namespace OrdensDeServico.Views.Tecnicos
             {
                 cmbStatus.Text = ordemServico.Status;
             }
-
-            // Adiciona o evento de alteração após preencher os dados iniciais
-            cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
         }
 
-        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        // Evento do botão Confirmar (btnConfirmar) presente dentro do UserControl TecnicoOrdemCtr
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string novoStatus = cmbStatus.SelectedItem as string;
 
-            if (!string.IsNullOrEmpty(novoStatus))
+            if (string.IsNullOrEmpty(novoStatus))
             {
-                // Atualiza o objeto e salva a alteração no banco
-                if (presenter.AtualizarStatusOrdem(ordemServico.Id, novoStatus))
+                MessageBox.Show("Selecione um status válido.");
+                return;
+            }
+
+            // A alteração no banco de dados SÓ ocorre aqui, ao clicar no botão Confirmar
+            if (presenter.AtualizarStatusOrdem(ordemServico.Id, novoStatus))
+            {
+                MessageBox.Show($"Status da Ordem #{ordemServico.Id} atualizado para '{novoStatus}'!");
+
+                // Se mudou para Concluído ou Cancelado, recarrega a lista do FrmEditar para ocultar esta OS
+                if (novoStatus == "Concluído" || novoStatus == "Cancelado")
                 {
-                    // Se o status for alterado para Concluído ou Cancelado, atualiza a lista no FrmEditar
-                    if (novoStatus == "Concluído" || novoStatus == "Cancelado")
-                    {
-                        frmEditar.CarregarOrdensDoTecnico();
-                    }
+                    frmEditar.CarregarOrdensDoTecnico();
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao atualizar o status da Ordem de Serviço.");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar o status da Ordem de Serviço.");
             }
         }
     }

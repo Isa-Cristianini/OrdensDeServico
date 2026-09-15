@@ -1,37 +1,51 @@
-﻿using OrdensDeServico.Models;
+﻿using OrdensDeServico.Data;
+using OrdensDeServico.Models;
 using OrdensDeServico.Presenters;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
-namespace OrdensDeServico.Views.Tecnicos
+namespace OrdensDeServico.Views.Clientes
 {
     public partial class FrmCadastrar : Form
     {
-        private readonly TecnicoPresenter presenter;
+        private ClientePresenter presenter;
 
-        public FrmCadastrar(TecnicoPresenter presenter)
+        public FrmCadastrar(ClientePresenter presenter)
         {
             InitializeComponent();
             this.presenter = presenter;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            var tecnico = new Tecnico
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                Nome = txtNome.Text,
-                Especialidade = txtEspecialidade.Text
+                MessageBox.Show("Informe o nome do cliente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var cliente = new Cliente
+            {
+                Nome = txtNome.Text.Trim(),
+                Telefone = txtTel.Text.Trim()
             };
 
-            if (presenter.Cadastrar(tecnico))
+            if (presenter.Cadastrar(cliente))
             {
-                MessageBox.Show("Técnico cadastrado com sucesso!");
-                Close();
+                MessageBox.Show("Cliente cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Erro ao cadastrar técnico.");
+                MessageBox.Show("Erro ao cadastrar o cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

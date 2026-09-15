@@ -30,6 +30,7 @@
         {
             lblDescricao = new Label();
             cmbStatus = new ComboBox();
+            btnConfirmarStatus = new Button();
             SuspendLayout();
             // 
             // lblDescricao
@@ -44,19 +45,31 @@
             // cmbStatus
             // 
             cmbStatus.FormattingEnabled = true;
-            cmbStatus.Location = new Point(25, 87);
+            cmbStatus.Location = new Point(90, 99);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(121, 23);
+            cmbStatus.Size = new Size(153, 23);
             cmbStatus.TabIndex = 1;
+            // 
+            // btnConfirmarStatus
+            // 
+            btnConfirmarStatus.Location = new Point(274, 98);
+            btnConfirmarStatus.Name = "btnConfirmarStatus";
+            btnConfirmarStatus.Size = new Size(84, 24);
+            btnConfirmarStatus.TabIndex = 2;
+            btnConfirmarStatus.Text = "Confirmar";
+            btnConfirmarStatus.UseVisualStyleBackColor = true;
+            btnConfirmarStatus.Click += btnConfirmar_Click;
             // 
             // TecnicoOrdemCtr
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
+            Controls.Add(btnConfirmarStatus);
             Controls.Add(cmbStatus);
             Controls.Add(lblDescricao);
             Name = "TecnicoOrdemCtr";
-            Size = new Size(311, 150);
+            Size = new Size(459, 150);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -65,5 +78,6 @@
 
         private Label lblDescricao;
         private ComboBox cmbStatus;
+        private Button btnConfirmarStatus;
     }
 }

@@ -33,27 +33,29 @@
             flpOrdens = new FlowLayoutPanel();
             label1 = new Label();
             label2 = new Label();
+            btnSalvar = new Button();
             SuspendLayout();
             // 
             // txtNome
             // 
             txtNome.Location = new Point(100, 12);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(285, 23);
+            txtNome.Size = new Size(351, 23);
             txtNome.TabIndex = 0;
             // 
             // txtEspecialidade
             // 
             txtEspecialidade.Location = new Point(100, 50);
             txtEspecialidade.Name = "txtEspecialidade";
-            txtEspecialidade.Size = new Size(285, 23);
+            txtEspecialidade.Size = new Size(351, 23);
             txtEspecialidade.TabIndex = 1;
             // 
             // flpOrdens
             // 
-            flpOrdens.Location = new Point(-1, 104);
+            flpOrdens.AutoScroll = true;
+            flpOrdens.Location = new Point(-1, 100);
             flpOrdens.Name = "flpOrdens";
-            flpOrdens.Size = new Size(429, 173);
+            flpOrdens.Size = new Size(509, 173);
             flpOrdens.TabIndex = 2;
             // 
             // label1
@@ -74,18 +76,32 @@
             label2.TabIndex = 4;
             label2.Text = "Especialidade:";
             // 
+            // btnSalvar
+            // 
+            btnSalvar.Font = new Font("Segoe UI", 11F);
+            btnSalvar.Location = new Point(172, 299);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(114, 35);
+            btnSalvar.TabIndex = 5;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
             // FrmEditar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(440, 346);
+            ClientSize = new Size(510, 346);
+            Controls.Add(btnSalvar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(flpOrdens);
             Controls.Add(txtEspecialidade);
             Controls.Add(txtNome);
+            MaximizeBox = false;
             Name = "FrmEditar";
-            Text = "FrmEditar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Editar Técnico";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,5 +113,6 @@
         private FlowLayoutPanel flpOrdens;
         private Label label1;
         private Label label2;
+        private Button btnSalvar;
     }
 }
