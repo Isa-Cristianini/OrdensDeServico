@@ -44,9 +44,9 @@
             // btnNovo
             // 
             btnNovo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnNovo.Location = new Point(194, 400);
+            btnNovo.Location = new Point(216, 399);
             btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(121, 29);
+            btnNovo.Size = new Size(121, 30);
             btnNovo.TabIndex = 1;
             btnNovo.Text = "+Novo Técnico";
             btnNovo.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             // flpTecnicos
             // 
             flpTecnicos.AutoScroll = true;
-            flpTecnicos.Location = new Point(0, 45);
+            flpTecnicos.Location = new Point(12, 45);
             flpTecnicos.Name = "flpTecnicos";
             flpTecnicos.Size = new Size(534, 336);
             flpTecnicos.TabIndex = 3;
@@ -75,11 +75,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(514, 441);
+            ClientSize = new Size(534, 441);
             Controls.Add(flpTecnicos);
             Controls.Add(btnBuscar);
             Controls.Add(btnNovo);
             Controls.Add(txtBusca);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "FrmListar";
             StartPosition = FormStartPosition.CenterScreen;

@@ -38,7 +38,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(22, 9);
+            lblNome.Location = new Point(24, 22);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 0;
@@ -47,7 +47,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 92);
+            label1.Location = new Point(24, 83);
             label1.Name = "label1";
             label1.Size = new Size(81, 15);
             label1.TabIndex = 1;
@@ -55,23 +55,24 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(47, 50);
+            txtNome.Location = new Point(24, 40);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(306, 23);
+            txtNome.Size = new Size(277, 23);
             txtNome.TabIndex = 2;
             // 
             // txtEspecialidade
             // 
-            txtEspecialidade.Location = new Point(47, 129);
+            txtEspecialidade.Location = new Point(24, 101);
             txtEspecialidade.Name = "txtEspecialidade";
-            txtEspecialidade.Size = new Size(306, 23);
+            txtEspecialidade.Size = new Size(277, 23);
             txtEspecialidade.TabIndex = 3;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(265, 200);
+            btnSalvar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSalvar.Location = new Point(185, 142);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(88, 33);
+            btnSalvar.Size = new Size(116, 29);
             btnSalvar.TabIndex = 4;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -79,14 +80,14 @@
             // 
             // FrmCadastrar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(433, 260);
+            AutoScaleMode = AutoScaleMode.Inherit;
+            ClientSize = new Size(324, 191);
             Controls.Add(btnSalvar);
             Controls.Add(txtEspecialidade);
             Controls.Add(txtNome);
             Controls.Add(label1);
             Controls.Add(lblNome);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "FrmCadastrar";
             StartPosition = FormStartPosition.CenterScreen;

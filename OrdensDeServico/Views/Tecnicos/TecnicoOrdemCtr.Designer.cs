@@ -35,26 +35,25 @@
             // 
             // lblDescricao
             // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(25, 44);
+            lblDescricao.Location = new Point(17, 32);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(115, 15);
+            lblDescricao.Size = new Size(437, 63);
             lblDescricao.TabIndex = 0;
             lblDescricao.Text = "Descrição da ordem:";
             // 
             // cmbStatus
             // 
             cmbStatus.FormattingEnabled = true;
-            cmbStatus.Location = new Point(90, 99);
+            cmbStatus.Location = new Point(53, 98);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(153, 23);
+            cmbStatus.Size = new Size(183, 23);
             cmbStatus.TabIndex = 1;
             // 
             // btnConfirmarStatus
             // 
-            btnConfirmarStatus.Location = new Point(274, 98);
+            btnConfirmarStatus.Location = new Point(279, 98);
             btnConfirmarStatus.Name = "btnConfirmarStatus";
-            btnConfirmarStatus.Size = new Size(84, 24);
+            btnConfirmarStatus.Size = new Size(111, 24);
             btnConfirmarStatus.TabIndex = 2;
             btnConfirmarStatus.Text = "Confirmar";
             btnConfirmarStatus.UseVisualStyleBackColor = true;
@@ -64,14 +63,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = SystemColors.ControlLightLight;
             Controls.Add(btnConfirmarStatus);
             Controls.Add(cmbStatus);
             Controls.Add(lblDescricao);
             Name = "TecnicoOrdemCtr";
-            Size = new Size(459, 150);
+            Size = new Size(480, 150);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

@@ -53,9 +53,9 @@
             // flpOrdens
             // 
             flpOrdens.AutoScroll = true;
-            flpOrdens.Location = new Point(-1, 100);
+            flpOrdens.Location = new Point(12, 100);
             flpOrdens.Name = "flpOrdens";
-            flpOrdens.Size = new Size(509, 173);
+            flpOrdens.Size = new Size(496, 173);
             flpOrdens.TabIndex = 2;
             // 
             // label1
@@ -79,7 +79,7 @@
             // btnSalvar
             // 
             btnSalvar.Font = new Font("Segoe UI", 11F);
-            btnSalvar.Location = new Point(172, 299);
+            btnSalvar.Location = new Point(197, 299);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(114, 35);
             btnSalvar.TabIndex = 5;
@@ -98,6 +98,7 @@
             Controls.Add(flpOrdens);
             Controls.Add(txtEspecialidade);
             Controls.Add(txtNome);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "FrmEditar";
             StartPosition = FormStartPosition.CenterScreen;
